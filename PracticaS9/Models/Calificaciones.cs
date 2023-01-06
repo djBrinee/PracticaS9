@@ -10,7 +10,12 @@ namespace PracticaS9.Models
     {
         public int puntuacion { get; set; }
         public Asignatura? asignatura { get; set; }
-    }
 
+        public bool Aprobada()
+        {
+            bool response = puntuacion >= 70 ?  true : false;
+            return response;
+        }
+    }
 
 }
