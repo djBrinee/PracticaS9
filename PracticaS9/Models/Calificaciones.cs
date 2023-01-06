@@ -14,6 +14,7 @@ namespace PracticaS9.Models
         public bool Aprobada()
         {
             bool response = puntuacion >= 70 ?  true : false;
+            Asignatura asignatura=new Asignatura();
             return response;
         }
     }

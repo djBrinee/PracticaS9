@@ -25,6 +25,44 @@ namespace PracticaS9.Models
                 return asignaturas.Count;
             }
         }
+
+        public bool Retirar(Asignatura asignaturaRetirar)
+        {
+            try
+            {
+                if (asignaturas.Contains(asignaturaRetirar))
+                {
+                    asignaturas.Remove(asignaturaRetirar);
+                    return true;
+                }
+                else 
+                    return false; 
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool ValidarCreditos()
+        {
+            try
+            {
+                int totalCreds = 0;
+                foreach (var asignatura in asignaturas)
+                {
+                    totalCreds += asignatura.creditos;
+                }
+                bool response = totalCreds > creditosMaximos ? true : false;
+                return response;
+
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+        
     }
 
 }
