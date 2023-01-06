@@ -6,12 +6,19 @@ namespace TestsPracticaS9
         [Fact]
         public void Test1()
         {
-            Asignatura asignatura = new Asignatura("codigo", "nombre", 6);
-            Calificaciones calificaciones = new Calificaciones( 70, asignatura );
+            Asignatura asignatura = new Asignatura()
+            {
+                codigo = "codigo", nombre = "nombre", creditos = 6
+            };
+            Calificaciones calificaciones = new Calificaciones()
+            {
+                puntuacion = 70,
+                asignatura = asignatura
+            };
 
-            calificaciones.Aprobado(true);
+           bool aprobada = calificaciones.Aprobada();
             
-            Assert.True( calificaciones.Aprobado(false));   
+            Assert.True(aprobada);   
           
             
         }
