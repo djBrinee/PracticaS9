@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PracticaS9.Models
 {
-    internal class Asignatura
+    public class Asignatura
     {
         public string codigo { get; set; }
         public string nombre { get; set; }
